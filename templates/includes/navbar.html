@@ -38,12 +38,9 @@
                     <i class="fa fa-bars"></i> Todas as categorias
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Suvinil </a>
-                    <a class="dropdown-item" href="#">Coral </a>
-                    <a class="dropdown-item" href="#">Eucatex</a>
-                    <a class="dropdown-item" href="#">Sherwin Wlliams </a>
-                    <a class="dropdown-item" href="#">Construção </a>
-                    <a class="dropdown-item" href="#">Acessórios </a> 
+                    {% for category in links %}
+                    <a class="dropdown-item" href="{{ category.get_url }}">{{ category.category_name }} </a>
+                    {% endfor %}
                 </div>
             </div>  <!-- category-wrap.// -->
         </div> <!-- col.// -->
