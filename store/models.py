@@ -1,5 +1,6 @@
 from django.db import models
 from category.models import Category
+from django.urls import reverse
 
 # Create your models here.
 class Product(models.Model):
@@ -13,6 +14,9 @@ class Product(models.Model):
     category       = models.ForeignKey(Category, on_delete=models.CASCADE)
     created_date   = models.DateTimeField('Data de criação', auto_now_add=True)
     modifield_date = models.DateTimeField('Data modificação', auto_now=True)
+
+    def get_url(self):
+        return reverse('product_detail', args=[self.category.slug, self.slug])
 
     def __str__(self) -> str:
         return self.product_name
