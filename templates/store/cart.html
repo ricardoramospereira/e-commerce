@@ -22,6 +22,8 @@
     </tr>
     </thead>
     <tbody>
+
+    {% for cart_item in cart_items %}
     <tr>
         <td>
             <figure class="itemside align-items-center">
@@ -56,6 +58,7 @@
         <a href="" class="btn btn-danger"> Remover</a>
         </td>
     </tr>
+    {% endfor %}
     
     </tbody>
     </table>
