@@ -27,10 +27,10 @@
     <tr>
         <td>
             <figure class="itemside align-items-center">
-                <div class="aside"><img src="{% static './images/items/11.jpg' %}" class="img-sm"></div>
+                <div class="aside"><img src="{{ cart_item.product.images.url }}" class="img-sm"></div>
                 <figcaption class="info">
-                    <a href="#" class="title text-dark">Camera Canon EOS M50 Kit</a>
-                    <p class="text-muted small">Matrix: 25 Mpx <br> Brand: Canon</p>
+                    <a href="#" class="title text-dark">{{ cart_item.product.product_name }}</a>
+                    <p class="text-muted small">Cor: 25 Mpx <br> Tamanho: Canon</p>
                 </figcaption>
             </figure>
         </td>
@@ -41,17 +41,17 @@
                                 <div class="input-group-prepend">
                                 <button class="btn btn-light" type="button" id="button-plus"> <i class="fa fa-minus"></i> </button>
                                 </div>
-                                <input type="text" class="form-control"  value="1">
+                                <input type="text" class="form-control"  value="{{ cart_item.quantity }}">
                                 <div class="input-group-append">
-                                <button class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </button>
+                                <a href="{% url 'add_cart' cart_item.product.id %}" class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </a>
                                 </div>
                             </div> <!-- input-group.// -->
                         </div> <!-- col.// -->
         </td>
         <td> 
             <div class="price-wrap"> 
-                <var class="price">$1156.00</var> 
-                <small class="text-muted"> $315.20 each </small> 
+                <var class="price">R${{ cart_item.sub_total }}</var> 
+                <small class="text-muted"> R${{ cart_item.product.price }} cada </small> 
             </div> <!-- price-wrap .// -->
         </td>
         <td class="text-right"> 
@@ -71,7 +71,7 @@
             <div class="card-body">
                 <dl class="dlist-align">
                   <dt>Preço Produtos:</dt>
-                  <dd class="text-right">$69.97</dd>
+                  <dd class="text-right">R$ {{total}}</dd>
                 </dl>
                 <dl class="dlist-align">
                   <dt>Envio:</dt>
@@ -79,7 +79,7 @@
                 </dl>
                 <dl class="dlist-align">
                   <dt>Total:</dt>
-                  <dd class="text-right text-dark b"><strong>$59.97</strong></dd>
+                  <dd class="text-right text-dark b"><strong>$</strong></dd>
                 </dl>
                 <hr>
                 <p class="text-center mb-3">
