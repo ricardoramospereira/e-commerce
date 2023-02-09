@@ -10,9 +10,9 @@ class Cart(models.Model):
         return self.cart_id
 
 class CartItem(models.Model):
-    product = models.ForeignKey("Produto", Product, on_delete=models.CASCADE)
-    cart    = models.ForeignKey("Carrinho", Cart, on_delete=models.CASCADE)
-    quantity = models.IntegerField("Quantidade")
+    product   = models.ForeignKey(Product, on_delete=models.CASCADE) # não definir tradução aqui
+    cart      = models.ForeignKey(Cart, on_delete=models.CASCADE) # não definir tradução aqui
+    quantity  = models.IntegerField("Quantidade")
     is_active = models.BooleanField("Ativo", default=True)
 
     def __str__(self) -> str:
