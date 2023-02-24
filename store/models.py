@@ -15,6 +15,10 @@ class Product(models.Model):
     created_date   = models.DateTimeField('Data de criação', auto_now_add=True)
     modifield_date = models.DateTimeField('Data modificação', auto_now=True)
 
+    class Meta:
+        verbose_name        =  'Product'
+        verbose_name_plural =  'Products'
+
     def get_url(self):
         return reverse('product_detail', args=[self.category.slug, self.slug])
 

@@ -8,6 +8,15 @@
     <div class="container">
     
     <!-- ============================ COMPONENT 1 ================================= -->
+    {% if not cart_items %}
+        <h4 class=" text-center alert alert-danger" role="alert">Seu carrinho está vazio</h4>
+        <br>
+        <div class="text-center">
+            <a href="{% url 'store' %}" class="btn btn-primary">Ir a loja</a>
+        </div>
+
+    {% else %}
+
     
     <div class="row">
         <aside class="col-lg-9">
@@ -29,7 +38,7 @@
             <figure class="itemside align-items-center">
                 <div class="aside"><img src="{{ cart_item.product.images.url }}" class="img-sm"></div>
                 <figcaption class="info">
-                    <a href="#" class="title text-dark">{{ cart_item.product.product_name }}</a>
+                    <a href="{{ cart_item.product.get_url }}" class="title text-dark">{{ cart_item.product.product_name }}</a>
                     <p class="text-muted small">Cor: 25 Mpx <br> Tamanho: Canon</p>
                 </figcaption>
             </figure>
@@ -39,7 +48,7 @@
                         <div class="col"> 
                             <div class="input-group input-spinner">
                                 <div class="input-group-prepend">
-                                <button class="btn btn-light" type="button" id="button-plus"> <i class="fa fa-minus"></i> </button>
+                                <a href="{% url 'remove_cart' cart_item.product.id %}" class="btn btn-light" type="button" id="button-plus"> <i class="fa fa-minus"></i> </a>
                                 </div>
                                 <input type="text" class="form-control"  value="{{ cart_item.quantity }}">
                                 <div class="input-group-append">
@@ -55,7 +64,7 @@
             </div> <!-- price-wrap .// -->
         </td>
         <td class="text-right"> 
-        <a href="" class="btn btn-danger"> Remover</a>
+        <a href="{% url 'remove_cart_item' cart_item.product.id %}" class="btn btn-danger"> Remover</a>
         </td>
     </tr>
     {% endfor %}
@@ -86,7 +95,7 @@
                     <img src="{% static './images/misc/payments.png' %}" height="26">
                 </p>
                 <a href="./place-order.html" class="btn btn-primary btn-block"> Checkout </a>
-                <a href="./store.html" class="btn btn-light btn-block">Continue Comprando</a>
+                <a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Comprando</a>
             </div> <!-- card-body.// -->
             </div> <!-- card.// -->
     
@@ -94,6 +103,7 @@
     
     
     </div> <!-- row.// -->
+    {% endif %}
     <!-- ============================ COMPONENT 1 END .// ================================= -->
     
     </div> <!-- container .//  -->
