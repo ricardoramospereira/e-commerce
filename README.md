@@ -1,4 +1,5 @@
 # e-commerce
+[![Bower](https://img.shields.io/bower/l/django)](https://github.com/ricardoramospereira/e-commerce/blob/main/LICENSE)
 
 # Technologies
 ## Back-end
