@@ -12,6 +12,8 @@
 * CSS
 * Javascript
 
+# under development...
+
 # Layout
 ![Grande Kart _ Uma das maiores plataformas de compras online - Avast Secure Browser 13_03_2023 15_22_44](https://user-images.githubusercontent.com/103947016/233662125-8a69d967-5912-41e0-89b6-b2c0f613c776.png)
 ![Grande Kart _ Uma das maiores plataformas de compras online - Avast Secure Browser 13_03_2023 15_23_03](https://user-images.githubusercontent.com/103947016/233662134-15b3e231-9da8-479d-aea0-d9af28aed079.png)
