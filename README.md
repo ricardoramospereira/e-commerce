@@ -22,7 +22,7 @@
 # How to run the project
 Requirements = python==3.9.12 | django==4.1.5
 
-https://github.com/ricardoramospereira/e-commerce.git
+
 ```bash
 # clone repository
 git clone https://github.com/ricardoramospereira/e-commerce.git
