@@ -30,7 +30,7 @@ Requirements = python==3.9.12 | django==4.1.5
 git clone https://github.com/ricardoramospereira/e-commerce.git
 
 # install dependencies
-pip install
+pip install pillow 
 ```
 
 # author
